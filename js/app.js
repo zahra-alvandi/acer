@@ -12,6 +12,9 @@ const imgBtn5 = document.querySelector(".img-button-5");
 const sliders1 = document.querySelector(".sliders-1");
 const sliders2 = document.querySelector(".sliders-2");
 const slider2 = document.querySelector(".slider-2")
+const slider3 = document.querySelector(".slider-3")
+const slider4 = document.querySelector(".slider-4")
+const slider5 = document.querySelector(".slider-5")
 
 
 headerMobileMenu.addEventListener("click", function () {
@@ -44,4 +47,26 @@ imgBtn2.addEventListener("click", function () {
     sliders1.style.display = "none";
     // sliders2.style.display = "block";
     sliders2.classList.remove("hide");
+});
+
+imgBtn3.addEventListener("click", function () {
+    firstSliderImg.setAttribute("src", "./image/acer-laptop-swift-14-ai-amd-hero-banner-sf14-61_Primary-Hero-S.avif");
+    slider3.classList.remove("hide");
+    sliders1.style.display = "none";
+    sliders2.style.display = "none";
+});
+
+imgBtn4.addEventListener("click", function () {
+    firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
+    slider4.classList.remove("hide");
+    sliders1.style.display = "none";
+    slider3.style.display = "none";
+});
+
+imgBtn5.addEventListener("click", function () {
+    firstSliderImg.setAttribute("src", "./image/Acer-TravelMate-P6-14-AI-tmp614-54-Banner_Primary-Hero-S.avif");
+    slider5.classList.remove("hide");
+    sliders1.style.display = "none";
+    slider3.style.display = "none";
+    slider4.classList.add("remove");
 });
