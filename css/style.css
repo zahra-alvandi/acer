@@ -104,6 +104,10 @@
   padding: 24px;
   width: 272px;
   top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-title {
@@ -112,6 +116,7 @@
   margin-bottom: 16px;
   color: white;
   font-family: sans-serif;
+  line-height: 47px;
 }
 
 .header-text {
@@ -120,6 +125,7 @@
   margin-bottom: 16px;
   color: white;
   font-family: sans-serif;
+  line-height: 24px;
 }
 
 .header-button {
@@ -133,4 +139,24 @@
   font-family: sans-serif;
 }
 
+.img-button {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+}
 
+.btn {
+  width: 40px;
+  height: 4px;
+  background-color: rgb(225, 225, 225);
+  box-shadow: rgba(71, 71, 71, 0.2);
+  border: none;
+}
+
+.slider-2 img {
+  display: none;
+}
