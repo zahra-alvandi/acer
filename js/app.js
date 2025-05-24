@@ -17,7 +17,6 @@ const pic4TextBox = document.querySelector(".pic-4-text-box");
 const pic5TextBox = document.querySelector(".pic-5-text-box");
 const width = window.innerWidth;
 
-
 headerMobileMenu.addEventListener("click", function () {
     headerMobileLine1.style.rotate = "45deg";
     headerMobileLine2.style.display = "none";
@@ -48,11 +47,16 @@ imgBtn1.addEventListener("click", function () {
 
 imgBtn2.addEventListener("click", function () {
     // if (425 <= width <= 767) {
-    //     firstSliderImg.src = "./image/WK22-MemorialDay-2025_Primary-Hero-M2.avif";
-    // } else if (width < 424) {
-    //     firstSliderImg.src = "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg";
+    //     slider1Pic1Md.classList.remove("hide");
+    // } else {
+    //     slider1Pic1Md.classList.add("hide");
     // }
-    firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg");
+    if (320 <= width <= 425) {
+        firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg");
+    } else if (426 <= width <= 767) {
+        firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-M2.avif");
+    }
+    // firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg");
     pic2TextBox.classList.remove("hide");
     pic1TextBox.classList.add("hide");
     pic3TextBox.classList.add("hide");
