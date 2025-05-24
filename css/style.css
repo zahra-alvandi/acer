@@ -39,6 +39,35 @@
   }
 } */
 
+@media screen and (min-width: 375px) and (max-width: 424px) {
+  .slider-1-text > .header-title > h1 {
+    width: 279px;
+  }
+  .slider-2-text > .header-title > h1 {
+    width: 279px;
+  }
+  .slider-5-text > .header-title > h1 {
+    width: 279px;
+  }
+  .first-slider-img-md {
+    display: none;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .slider-1-pic2 {
+    display: none;
+  }
+  .slider-1-text > .header-title > h1 {
+    width: 329px;
+  }
+  .slider-2-text > .header-title > h1 {
+    width: 329px;
+  }
+  .slider-5-text > .header-title > h1 {
+    width: 329px;
+  }
+}
+
 .hide {
   display: none;
 }
@@ -102,10 +131,26 @@
   position: relative;
 }
 
+.pic-1-text-box {
+  padding: 0px 24px;
+}
+.pic-2-text-box {
+  padding: 0px 24px;
+}
+.pic-3-text-box {
+  padding: 0px 24px;
+}
+.pic-4-text-box {
+  padding: 0px 24px;
+}
+.pic-5-text-box {
+  padding: 0px 24px;
+}
+
 .slider-1-text-box {
   position: absolute;
   padding: 24px;
-  width: 272px;
+  width: 224px;
   top: 10px;
   display: flex;
   flex-direction: column;
@@ -115,11 +160,12 @@
 
 .header-title {
   font-size: 36px;
-  /* font-weight: 600; */
+  font-weight: 600;
   margin-bottom: 16px;
   color: white;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 47px;
+  width: 224px;
 }
 
 .header-text {
@@ -127,7 +173,7 @@
   font-weight: 400;
   margin-bottom: 16px;
   color: white;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 24px;
 }
 
@@ -139,7 +185,7 @@
   margin-top: 20px;
   text-decoration: none;
   border-radius: 800px;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .img-button {
@@ -160,6 +206,41 @@
   border: none;
 }
 
-.slider-2 img {
+.slider-box img {
   display: none;
+}
+
+.slider-3-text > .header-text {
+  position: absolute;
+  left: 0;
+}
+
+.slider-3-text > .header-title {
+  position: absolute;
+  left: 0;
+  top: 55%;
+}
+.slider-3-text > .header-button-container {
+  position: absolute;
+  left: 0;
+  top: 155px;
+}
+
+.slider-5-text {
+  align-items: start;
+}
+
+.slider-5-text .header-text {
+  font-size: 13px;
+  color: #222;
+  margin-bottom: 0;
+}
+
+.slider-5-text .header-title {
+  font-size: 36px;
+  color: #222;
+}
+
+.hero-info {
+  padding-bottom: 20px;
 }

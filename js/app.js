@@ -4,17 +4,18 @@ const headerMobileLine2 = document.querySelector(".header-mobile-line-2");
 const headerMobileLine3 = document.querySelector(".header-mobile-line-3");
 const sideMenu = document.querySelector(".side-menu");
 const firstSliderImg = document.querySelector(".first-slider-img");
+const firstSliderImgMd = document.querySelector(".first-slider-img-md");
 const imgBtn1 = document.querySelector(".img-button-1");
 const imgBtn2 = document.querySelector(".img-button-2");
 const imgBtn3 = document.querySelector(".img-button-3");
 const imgBtn4 = document.querySelector(".img-button-4");
 const imgBtn5 = document.querySelector(".img-button-5");
-const sliders1 = document.querySelector(".sliders-1");
-const sliders2 = document.querySelector(".sliders-2");
-const slider2 = document.querySelector(".slider-2")
-const slider3 = document.querySelector(".slider-3")
-const slider4 = document.querySelector(".slider-4")
-const slider5 = document.querySelector(".slider-5")
+const pic1TextBox = document.querySelector(".pic-1-text-box");
+const pic2TextBox = document.querySelector(".pic-2-text-box");
+const pic3TextBox = document.querySelector(".pic-3-text-box");
+const pic4TextBox = document.querySelector(".pic-4-text-box");
+const pic5TextBox = document.querySelector(".pic-5-text-box");
+const width = window.innerWidth;
 
 
 headerMobileMenu.addEventListener("click", function () {
@@ -37,36 +38,52 @@ headerMobileMenu.addEventListener("click", function () {
 
 imgBtn1.addEventListener("click", function () {
     firstSliderImg.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-S.avif");
-    // sliders1.style.display = "block";
-    sliders2.style.display = "none";
-})
+    pic1TextBox.classList.remove("hide");
+    pic2TextBox.classList.add("hide");
+    pic3TextBox.classList.add("hide");
+    pic4TextBox.classList.add("hide");
+    pic5TextBox.classList.add("hide");
+});
+
 
 imgBtn2.addEventListener("click", function () {
-    slider2.classList.remove("hide");
+    // if (425 <= width <= 767) {
+    //     firstSliderImg.src = "./image/WK22-MemorialDay-2025_Primary-Hero-M2.avif";
+    // } else if (width < 424) {
+    //     firstSliderImg.src = "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg";
+    // }
     firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg");
-    sliders1.style.display = "none";
-    // sliders2.style.display = "block";
-    sliders2.classList.remove("hide");
+    pic2TextBox.classList.remove("hide");
+    pic1TextBox.classList.add("hide");
+    pic3TextBox.classList.add("hide");
+    pic4TextBox.classList.add("hide");
+    pic5TextBox.classList.add("hide");
 });
 
 imgBtn3.addEventListener("click", function () {
     firstSliderImg.setAttribute("src", "./image/acer-laptop-swift-14-ai-amd-hero-banner-sf14-61_Primary-Hero-S.avif");
-    slider3.classList.remove("hide");
-    sliders1.style.display = "none";
-    sliders2.style.display = "none";
+    pic3TextBox.classList.remove("hide");
+    pic1TextBox.classList.add("hide");
+    pic2TextBox.classList.add("hide");
+    pic4TextBox.classList.add("hide");
+    pic5TextBox.classList.add("hide");
 });
 
 imgBtn4.addEventListener("click", function () {
     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
-    slider4.classList.remove("hide");
-    sliders1.style.display = "none";
-    slider3.style.display = "none";
+    pic4TextBox.classList.remove("hide");
+    pic3TextBox.classList.add("hide");
+    pic1TextBox.classList.add("hide");
+    pic2TextBox.classList.add("hide");
+    pic5TextBox.classList.add("hide");
 });
 
 imgBtn5.addEventListener("click", function () {
     firstSliderImg.setAttribute("src", "./image/Acer-TravelMate-P6-14-AI-tmp614-54-Banner_Primary-Hero-S.avif");
-    slider5.classList.remove("hide");
-    sliders1.style.display = "none";
-    slider3.style.display = "none";
-    slider4.classList.add("remove");
+    pic5TextBox.classList.remove("hide");
+    pic4TextBox.classList.add("hide");
+    pic3TextBox.classList.add("hide");
+    pic1TextBox.classList.add("hide");
+    pic2TextBox.classList.add("hide");
 });
+
