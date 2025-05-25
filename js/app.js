@@ -45,27 +45,50 @@ imgBtn1.addEventListener("click", function () {
 });
 
 
-imgBtn2.addEventListener("click", function () {
-    // if (425 <= width <= 767) {
-    //     slider1Pic1Md.classList.remove("hide");
-    // } else {
-    //     slider1Pic1Md.classList.add("hide");
-    // }
-    if (320 <= width <= 425) {
-        firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg");
-    } else if (426 <= width <= 767) {
-        firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-M2.avif");
-    }
-    // firstSliderImg.setAttribute("src", "./image/WK22-MemorialDay-2025_Primary-Hero-S.jpg");
-    pic2TextBox.classList.remove("hide");
-    pic1TextBox.classList.add("hide");
-    pic3TextBox.classList.add("hide");
-    pic4TextBox.classList.add("hide");
-    pic5TextBox.classList.add("hide");
-});
+if (width >= 425) {
+    imgBtn2.addEventListener("click", function () {
+        // if (425 <= width <= 767) {
+        //     slider1Pic1Md.classList.remove("hide");
+        // } else {
+        //     slider1Pic1Md.classList.add("hide");
+        // }
+        // if (320 <= width <= 425) {
+        //     firstSliderImg.setAttribute("src", "./image/swift-edge-14-ai-agw-banner_Primary-Hero-M2.avif");
+        // } else if (426 <= width <= 767) {
+        //     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
+        // }
+        firstSliderImg.setAttribute("src", "./image/swift-edge-14-ai-agw-banner_Primary-Hero-M2.avif");
+        pic2TextBox.classList.remove("hide");
+        pic1TextBox.classList.add("hide");
+        pic3TextBox.classList.add("hide");
+        pic4TextBox.classList.add("hide");
+        pic5TextBox.classList.add("hide");
+    });
+
+} else {
+    imgBtn2.addEventListener("click", function () {
+        // if (425 <= width <= 767) {
+        //     slider1Pic1Md.classList.remove("hide");
+        // } else {
+        //     slider1Pic1Md.classList.add("hide");
+        // }
+        // if (320 <= width <= 425) {
+        //     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
+        // } else if (426 <= width <= 767) {
+        //     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
+        // }
+        firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
+        pic2TextBox.classList.remove("hide");
+        pic1TextBox.classList.add("hide");
+        pic3TextBox.classList.add("hide");
+        pic4TextBox.classList.add("hide");
+        pic5TextBox.classList.add("hide");
+    });
+}
+
 
 imgBtn3.addEventListener("click", function () {
-    firstSliderImg.setAttribute("src", "./image/acer-laptop-swift-14-ai-amd-hero-banner-sf14-61_Primary-Hero-S.avif");
+    firstSliderImg.setAttribute("src", "./image/HOMEPAGE_2900x1087-4_Primary-Hero-S.avif");
     pic3TextBox.classList.remove("hide");
     pic1TextBox.classList.add("hide");
     pic2TextBox.classList.add("hide");
@@ -74,7 +97,7 @@ imgBtn3.addEventListener("click", function () {
 });
 
 imgBtn4.addEventListener("click", function () {
-    firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
+    firstSliderImg.setAttribute("src", "./image/acer-laptop-swift-14-ai-amd-hero-banner-sf14-61_Primary-Hero-S.avif");
     pic4TextBox.classList.remove("hide");
     pic3TextBox.classList.add("hide");
     pic1TextBox.classList.add("hide");
