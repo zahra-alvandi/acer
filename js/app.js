@@ -16,6 +16,7 @@ const pic3TextBox = document.querySelector(".pic-3-text-box");
 const pic4TextBox = document.querySelector(".pic-4-text-box");
 const pic5TextBox = document.querySelector(".pic-5-text-box");
 const width = window.innerWidth;
+const slider1Pic1 = document.querySelector(".slider-1-pic1");
 
 headerMobileMenu.addEventListener("click", function () {
     headerMobileLine1.style.rotate = "45deg";
@@ -34,6 +35,15 @@ headerMobileMenu.addEventListener("click", function () {
         headerMobileLine3.style.top = "0";
     });
 });
+
+// if (width <= 374) {
+//     slider1Pic1.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-S.avif")
+// }
+// if (width >= 375) {
+//     slider1Pic1.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-M2.avif")
+// } else if (width >= 678) {
+//     slider1Pic1.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-M1.avif")
+// }
 
 imgBtn1.addEventListener("click", function () {
     firstSliderImg.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-S.avif");

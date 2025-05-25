@@ -343,7 +343,7 @@
   }
 }
 
-@media all and (min-width: 637px) and (max-width: 768px) {
+@media all and (min-width: 637px) and (max-width: 899px) {
   .slider-1-pic-s {
     display: none;
   }
@@ -352,5 +352,34 @@
   }
   .slider-1-pic1-lg {
     display: block;
+  }
+  .slider-1-text-box {
+    width: 554px;
+    align-items: start;
+  }
+  .slider-1-text-box .header-title {
+    width: 554px;
+    align-items: start;
+  }
+  .slider-3-text > .header-button-container {
+    top: 200px;
+  }
+  .slider-1-pic1-xl {
+    display: none;
+  }
+}
+
+@media all and (min-width: 900px) {
+  .slider-1-pic1-xl {
+    display: block;
+  }
+  .slider-1-pic-s {
+    display: none;
+  }
+  .slider-1-pic1-md {
+    display: none;
+  }
+  .slider-1-pic1-lg {
+    display: none;
   }
 }
