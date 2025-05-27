@@ -270,6 +270,69 @@
   display: none;
 }
 
+.poster-section {
+  margin-bottom: 60px;
+}
+
+.poster-1-box {
+  position: relative;
+  width: 320px;
+  height: 309px;
+  margin-bottom: 24px;
+}
+
+.glass-overlay {
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.2); /* سفید نیمه‌شفاف */
+  backdrop-filter: blur(8px); /* افکت شیشه‌ای */
+  /* -webkit-backdrop-filter: blur(8px);  */
+}
+
+.poster-1-text-box {
+  padding: 16px 24px;
+  position: absolute;
+  top: 42px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 24px;
+}
+
+.poster-1-text-box h4 {
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0px 0px 16px;
+}
+
+.poster-1-text-box p {
+  color: rgb(71, 71, 71);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.poster-1-text-box button {
+  padding: 14px 0px 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #474747;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #80c343;
+}
+
+.poster-2-box {
+  position: relative;
+  width: 320px;
+  height: 309px;
+  margin-bottom: 24px;
+}
+
 @media screen and (min-width: 1600px) {
   .img-button {
     width: 280px;
