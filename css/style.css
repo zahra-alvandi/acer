@@ -272,6 +272,8 @@
 
 .poster-section {
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
 }
 
 .poster-1-box {
