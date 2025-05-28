@@ -389,6 +389,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.discover-section {
+  padding-bottom: 32px;
+}
+
 .discover-section-container {
   padding: 50px 24px;
 }
@@ -401,6 +405,67 @@
   line-height: 38px;
   font-weight: 600;
 }
+
+.discover-section-item-container {
+  padding: 0px 24px;
+}
+
+.discover-section-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* بهتر از auto auto */
+  align-items: stretch;
+  gap: 20px;
+}
+
+.discover-section-item1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.discover-section-item1-text h4 {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px 0px 8px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.discover-section-item1-text p {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.discover-section-item1-btn {
+  padding: 8px 0px;
+  /* margin-top: 35px; */
+  margin-top: auto;
+}
+
+.discover-section-item1-btn a {
+  text-decoration: none;
+  padding: 12px 0px 4px 0px;
+  border-bottom: 2px solid rgb(128, 195, 67);
+  color: rgb(71, 71, 71);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.discover-section-item1-btn a:hover {
+  border-bottom: 2px solid black;
+}
+
+.discover-section-item1 {
+  transition: transform 0.2s linear;
+}
+
+.discover-section-item1-img:hover {
+  transform: scale(1);
+}
+
+
 
 @media screen and (min-width: 1600px) {
   .img-button {
@@ -639,7 +704,16 @@
     font-size: 31px;
   }
   .insights-section-header {
-    width: 720px;
+    /* width: 720px; */
+  }
+  .discover-section-header {
+    font-size: 37px;
+  }
+  .discover-section-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* بهتر از auto auto */
+    align-items: stretch;
+    gap: 20px;
   }
 }
 
@@ -701,6 +775,15 @@
   .categories-container {
     display: flex;
     justify-content: center;
+  }
+  .discover-section-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* بهتر از auto auto */
+    align-items: stretch;
+    gap: 20px;
+  }
+  .discover-section {
+    padding-bottom: 70px;
   }
 }
 
@@ -777,5 +860,17 @@
   }
   .categories-item-img-xl {
     display: block;
+  }
+  .discover-section-header {
+    font-size: 47px;
+  }
+  .discover-section-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* بهتر از auto auto */
+    align-items: stretch;
+    gap: 20px;
+  }
+  .discover-section {
+    padding-bottom: 70px;
   }
 }
