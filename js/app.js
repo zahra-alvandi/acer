@@ -17,6 +17,9 @@ const pic4TextBox = document.querySelector(".pic-4-text-box");
 const pic5TextBox = document.querySelector(".pic-5-text-box");
 const width = window.innerWidth;
 const slider1Pic1 = document.querySelector(".slider-1-pic1");
+const fullText = "Purchasing a laptop to see us through school or college is an important investment.Student laptops witness the highs and lows of student life, helping us to cram information before a big exam, type assignments, or play movies or games during downtime.They must balance value, performance, and dependable battery life to get through a day of classes or intense study sessions.Student laptops must also be durable and withstand being transported around in a bag or rucksack(see our pick of stylish laptop bags here).Here are some of the best budget laptops for college or school."
+const words = fullText.split(" ");
+
 
 headerMobileMenu.addEventListener("click", function () {
     headerMobileLine1.style.rotate = "45deg";
@@ -124,3 +127,25 @@ imgBtn5.addEventListener("click", function () {
     pic2TextBox.classList.add("hide");
 });
 
+function updateResponsiveText() {
+    const width = window.innerWidth;
+    const baseWidth = 320;
+    const baseWordCount = 14;
+    const wordsPerStep = 5;
+    const pixelsPerStep = 65;
+
+    let wordCount = baseWordCount;
+
+    if (width > baseWidth) {
+        const steps = Math.floor((width - baseWidth) / pixelsPerStep);
+        wordCount += steps * wordsPerStep;
+    }
+
+    wordCount = Math.min(words.length, wordCount); // جلوگیری از اضافه شدن بیش از حد
+
+    const visibleWords = words.slice(0, wordCount).join(" ");
+    document.getElementById("responsive-text").textContent = visibleWords;
+}
+
+window.addEventListener("load", updateResponsiveText);
+window.addEventListener("resize", updateResponsiveText);
