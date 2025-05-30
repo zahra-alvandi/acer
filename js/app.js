@@ -19,6 +19,21 @@ const width = window.innerWidth;
 const slider1Pic1 = document.querySelector(".slider-1-pic1");
 const fullText = "Purchasing a laptop to see us through school or college is an important investment.Student laptops witness the highs and lows of student life, helping us to cram information before a big exam, type assignments, or play movies or games during downtime.They must balance value, performance, and dependable battery life to get through a day of classes or intense study sessions.Student laptops must also be durable and withstand being transported around in a bag or rucksack(see our pick of stylish laptop bags here).Here are some of the best budget laptops for college or school."
 const words = fullText.split(" ");
+const fullText2 = "The Swift Edge 14 AI is Acer’s brand-new ultralight laptop for 2025 and is perfect for users who crave maximum productivity on the go. This versatile AI laptop is suitable for working from home, hybrid work settings, or downtime, letting users easily achieve a work-life balance. With added features to protect against virtual attacks, this durable and secure laptop keeps data safe when connecting to public Wi-Fi."
+const words2 = fullText2.split(" ");
+const fullText3 = "It’s that time of year again, the season of…COMPUTEX! Whether you’re a seasoned computer expo vet, or a newbie bound for the green shores of Formosa to visit COMPUTEX 2025, you’re in the right place. Asia’s leading exhibition of AIoT and startups is back, and ready to showcase the latest, greatest technological innovations from all over the globe. This year’s expo will have 1,400 exhibitors from 29 countries or regions, and is going to be bigger and better than ever. COMPUTEX 2025 will focus on the latest tech trends: AI & Robotics, Next-Gen Tech, and Future Mobility. "
+const words3 = fullText3.split(" ");
+const fullText4 = "Google Chromebooks are user-friendly laptops that are designed for going online. Chromebooks are suitable for light use and encourage users to save documents to the Cloud  rather than the device itself. Instead of including a bunch of fancy features, Chromebooks offer a slimmed-down set of functions and capabilities. Google Chromebooks use the Chrome OS, a Linux-based operating system previously used by  computer enthusiasts. Chromebooks are optimized for streamlined web-based usage, allowing users to browse the web, work on Google Docs, watch videos, and send emails without being bogged down with unnecessary files and apps. "
+const words4 = fullText4.split(" ");
+const fullText5 = "Windows devices will display a lock screen when left unattended, requiring a password or biometric input to activate for additional security. If you want to add a personal touch to your computer, consider changing the lock screen background to a family photo or a holiday snap. Otherwise, Windows 11 devices may automatically select lock screen advertisements, including banner alerts and news updates. As the Windows 11 lock screen is fully customizable, you can also choose so-called widgets that may be of interest, such as local traffic information. Moreover, the Weather and more app shows dynamic, real-time updates on weather conditions, finance, and sports. These Windows lock screen widgets provide useful information at a glance, offering tailored content to boost the user experience.  "
+const words5 = fullText5.split(" ");
+const backToTopBtn = document.querySelector(".backToTopBtn");
+// const productsBtn = document.querySelector(".products-btn");
+// const productsItems = document.querySelector(".products-items");
+const supportBtn = document.querySelector(".support-btn");
+const supportItems = document.querySelector(".support-items");
+const resourcesBtn = document.querySelector(".rescorces-btn");
+const resourcesItems = document.querySelector(".rescorces-items");
 
 
 headerMobileMenu.addEventListener("click", function () {
@@ -132,7 +147,7 @@ function updateResponsiveText() {
     const baseWidth = 320;
     const baseWordCount = 14;
     const wordsPerStep = 5;
-    const pixelsPerStep = 65;
+    const pixelsPerStep = 300;
 
     let wordCount = baseWordCount;
 
@@ -141,11 +156,111 @@ function updateResponsiveText() {
         wordCount += steps * wordsPerStep;
     }
 
-    wordCount = Math.min(words.length, wordCount); // جلوگیری از اضافه شدن بیش از حد
+    wordCount = Math.min(words.length, wordCount);
 
     const visibleWords = words.slice(0, wordCount).join(" ");
     document.getElementById("responsive-text").textContent = visibleWords;
+    document.getElementById("responsive-text2").textContent = visibleWords;
+    document.getElementById("responsive-text3").textContent = visibleWords;
+    document.getElementById("responsive-text4").textContent = visibleWords;
+    document.getElementById("responsive-text5").textContent = visibleWords;
 }
 
 window.addEventListener("load", updateResponsiveText);
 window.addEventListener("resize", updateResponsiveText);
+
+backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// const productsBtn = document.querySelectorAll('.products-btn');
+// const productsItems = document.querySelectorAll('.products-items');
+
+// productsBtn.forEach((toggle, index) => {
+//     toggle.addEventListener('click', () => {
+//         productsItems.forEach((content, i) => {
+//             if (i === index) {
+
+//                 if (content.style.maxHeight) {
+//                     content.style.maxHeight = null;
+//                 } else {
+//                     content.style.maxHeight = content.scrollHeight + "px";
+//                 }
+//             } else {
+
+//                 content.style.maxHeight = null;
+//             }
+//         });
+//     });
+// });
+
+// productsBtn.addEventListener("click", function () {
+//     productsItems.classList.toggle("hide");
+//     // productsItems2.classList.toggle("hide");
+// });
+
+// let isOpen = false;
+
+// productsBtn.addEventListener("click", () => {
+//     if (!isOpen) {
+//         productsItems.style.maxHeight = productsItems.scrollHeight + "px";
+//     } else {
+//         productsItems.style.maxHeight = "0";
+//     }
+//     isOpen = !isOpen;
+// });
+
+// supportBtn.addEventListener("click", function () {
+//     supportItems.classList.toggle("hide");
+// });
+
+// supportBtn.addEventListener("click", () => {
+//     if (!isOpen) {
+//         supportItems.style.maxHeight = supportItems.scrollHeight + "px";
+//     } else {
+//         supportItems.style.maxHeight = "0";
+//     }
+//     isOpen = !isOpen;
+// });
+
+// resourcesBtn.addEventListener("click", function () {
+//     resourcesItems.classList.toggle("hide");
+// });
+
+// resourcesBtn.addEventListener("click", () => {
+//     if (!isOpen) {
+//         resourcesItems.style.maxHeight = resourcesItems.scrollHeight + "px";
+//     } else {
+//         resourcesItems.style.maxHeight = "0";
+//     }
+//     isOpen = !isOpen;
+// });
+
+const buttons = document.querySelectorAll('.products-btn');
+const dropdowns = document.querySelectorAll('.products-items');
+
+buttons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        const clickedDropdown = dropdowns[index];
+        const arrowIcon = btn.querySelector('.arrow-icon');
+        const isOpen = clickedDropdown.classList.contains('show');
+
+        // بستن همه dropdownها و حذف چرخش همه فلش‌ها
+        dropdowns.forEach(drop => drop.classList.remove('show'));
+        document.querySelectorAll('.arrow-icon').forEach(icon => icon.classList.remove('rotate'));
+
+        // اگه باز نبود، بازش کن و فلش بچرخون
+        if (!isOpen) {
+            clickedDropdown.classList.add('show');
+            arrowIcon.classList.add('rotate');
+
+            // اسکرول کردن تا پایین dropdown باز شده
+            setTimeout(() => {
+                clickedDropdown.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'end'
+                });
+            }, 300); // صبر کن تا transition باز شدن تموم شه
+        }
+    });
+});
