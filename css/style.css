@@ -157,6 +157,11 @@
   align-items: start;
 }
 
+.header-button-container:hover {
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: 5px 9px 20px white;
+}
+
 .slider-3-text > .header-text {
   position: absolute;
   left: 0;
@@ -544,6 +549,11 @@
   position: relative;
 }
 
+.back-top-btn:hover {
+  transition: all 0.3s ease 0s;
+  background-color: rgba(198, 198, 198, 0.5);
+}
+
 .back-top-btn button {
   border: none;
   color: rgb(51, 51, 51);
@@ -640,6 +650,48 @@
 
 .support-items-lg {
   display: none;
+}
+
+.container-lg {
+  display: none;
+}
+
+.responsive-text {
+  position: relative;
+}
+
+/* .responsive-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #222;
+  transition: width 0.3s ease;
+}
+
+.responsive-text:hover::after {
+  width: 100%;
+} */
+
+.footer-links-hover li {
+  position: relative;
+}
+
+.footer-links-hover a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #222;
+  transition: width 0.3s ease;
+}
+
+.footer-links-hover a:hover::after {
+  width: 100%;
 }
 
 @media screen and (min-width: 1600px) {
@@ -989,6 +1041,14 @@
   .insights-section-container::-webkit-scrollbar-track {
     background: lightgray;
   }
+  .container-lg {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-items-lg {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 @media all and (min-width: 1080px) {
@@ -1118,10 +1178,10 @@
   .arrow-icon {
     display: none;
   }
-  .footer-items-container {
+  /* .footer-items-container {
     display: flex;
     justify-content: center;
-  }
+  } */
   .container {
     display: flex;
   }
@@ -1132,7 +1192,7 @@
   .footer-item-1 {
     display: flex;
     flex-direction: column;
-    width: 330px;
+    /* width: 330px; */
   }
   .footer-item-1 p {
     margin-bottom: 8px;
@@ -1176,11 +1236,23 @@
   .sustainablity-lg {
     display: none;
   }
+  .container-lg {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-items-lg {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 @media all and (max-width: 1440px) {
   .insights-section {
     padding: 48px 24px;
     margin: 0px 0px;
+  }
+  .container-lg {
+    display: flex;
+    justify-content: center;
   }
 }

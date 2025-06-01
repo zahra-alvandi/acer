@@ -28,8 +28,6 @@ const words4 = fullText4.split(" ");
 const fullText5 = "Windows devices will display a lock screen when left unattended, requiring a password or biometric input to activate for additional security. If you want to add a personal touch to your computer, consider changing the lock screen background to a family photo or a holiday snap. Otherwise, Windows 11 devices may automatically select lock screen advertisements, including banner alerts and news updates. As the Windows 11 lock screen is fully customizable, you can also choose so-called widgets that may be of interest, such as local traffic information. Moreover, the Weather and more app shows dynamic, real-time updates on weather conditions, finance, and sports. These Windows lock screen widgets provide useful information at a glance, offering tailored content to boost the user experience.  "
 const words5 = fullText5.split(" ");
 const backToTopBtn = document.querySelector(".backToTopBtn");
-// const productsBtn = document.querySelector(".products-btn");
-// const productsItems = document.querySelector(".products-items");
 const supportBtn = document.querySelector(".support-btn");
 const supportItems = document.querySelector(".support-items");
 const resourcesBtn = document.querySelector(".rescorces-btn");
@@ -42,7 +40,7 @@ headerMobileMenu.addEventListener("click", function () {
     headerMobileLine3.style.rotate = "135deg";
     headerMobileLine3.style.position = "absolute";
     headerMobileLine3.style.top = "16px";
-    sideMenu.classList.remove("hide");
+    sideMenu.classList.toggle("hide");
     sideMenu.style.transition = "all 0.3s ease-out";
     headerMobileMenu.addEventListener("click", function () {
         sideMenu.classList.add("hide");
@@ -173,68 +171,6 @@ backToTopBtn.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// const productsBtn = document.querySelectorAll('.products-btn');
-// const productsItems = document.querySelectorAll('.products-items');
-
-// productsBtn.forEach((toggle, index) => {
-//     toggle.addEventListener('click', () => {
-//         productsItems.forEach((content, i) => {
-//             if (i === index) {
-
-//                 if (content.style.maxHeight) {
-//                     content.style.maxHeight = null;
-//                 } else {
-//                     content.style.maxHeight = content.scrollHeight + "px";
-//                 }
-//             } else {
-
-//                 content.style.maxHeight = null;
-//             }
-//         });
-//     });
-// });
-
-// productsBtn.addEventListener("click", function () {
-//     productsItems.classList.toggle("hide");
-//     // productsItems2.classList.toggle("hide");
-// });
-
-// let isOpen = false;
-
-// productsBtn.addEventListener("click", () => {
-//     if (!isOpen) {
-//         productsItems.style.maxHeight = productsItems.scrollHeight + "px";
-//     } else {
-//         productsItems.style.maxHeight = "0";
-//     }
-//     isOpen = !isOpen;
-// });
-
-// supportBtn.addEventListener("click", function () {
-//     supportItems.classList.toggle("hide");
-// });
-
-// supportBtn.addEventListener("click", () => {
-//     if (!isOpen) {
-//         supportItems.style.maxHeight = supportItems.scrollHeight + "px";
-//     } else {
-//         supportItems.style.maxHeight = "0";
-//     }
-//     isOpen = !isOpen;
-// });
-
-// resourcesBtn.addEventListener("click", function () {
-//     resourcesItems.classList.toggle("hide");
-// });
-
-// resourcesBtn.addEventListener("click", () => {
-//     if (!isOpen) {
-//         resourcesItems.style.maxHeight = resourcesItems.scrollHeight + "px";
-//     } else {
-//         resourcesItems.style.maxHeight = "0";
-//     }
-//     isOpen = !isOpen;
-// });
 
 const buttons = document.querySelectorAll('.products-btn');
 const dropdowns = document.querySelectorAll('.products-items');
