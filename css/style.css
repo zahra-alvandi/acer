@@ -233,7 +233,7 @@
 
 .navbar-xl li:hover {
   background-color: rgba(198, 198, 198, 0.5);
-  transition: all .3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .section1-header {
@@ -570,6 +570,7 @@
 
 .footer-items-container {
   background-color: #f0f0f0;
+  border-bottom: 2px solid rgba(198, 198, 198, 0.5);
 }
 
 .footer-item-1 {
@@ -693,6 +694,55 @@
 
 .footer-links-hover a:hover::after {
   width: 100%;
+}
+
+.rescorces-items-lg ul {
+  display: none;
+}
+
+.footer-apps-logo {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0px;
+}
+
+.footer-apps-logo svg {
+  padding: 0px 12px;
+}
+
+.footer-links-titles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.footer-links-item {
+  padding: 4px 16px;
+  margin-right: 2px;
+  border-right: 1px solid rgba(198, 198, 198, 0.5);
+}
+
+.footer-links-item a {
+  text-decoration: none;
+  color: rgb(34, 34, 34);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.footer-item-link svg {
+  margin-right: 8px;
+}
+
+.footer-item-link  {
+  text-decoration: none;
+  color: rgb(34, 34, 34);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 @media screen and (min-width: 1600px) {
