@@ -233,6 +233,7 @@
 
 .navbar-xl li:hover {
   background-color: rgba(198, 198, 198, 0.5);
+  transition: all .3s ease-in-out 0s;
 }
 
 .section1-header {
