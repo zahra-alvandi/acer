@@ -43,7 +43,7 @@ headerMobileMenu.addEventListener("click", function () {
     sideMenu.classList.toggle("hide");
     sideMenu.style.transition = "all 0.3s ease-out";
     headerMobileMenu.addEventListener("click", function () {
-        sideMenu.classList.add("hide");
+        // sideMenu.classList.add("hide");
         headerMobileLine1.style.rotate = "0deg";
         headerMobileLine2.style.display = "block";
         headerMobileLine3.style.rotate = "0deg";
@@ -199,4 +199,27 @@ buttons.forEach((btn, index) => {
             }, 300); // صبر کن تا transition باز شدن تموم شه
         }
     });
+});
+
+
+
+const productsTrigger = document.querySelector('.side-menu-box:nth-child(4) .side-menu-item');
+const productsSubMenu = document.querySelector('.products-side-menu');
+
+// دکمه برگشت از زیرمنو
+const productsBack = document.querySelector('.products-side-menu-title .side-menu-item');
+
+productsTrigger.addEventListener('click', function (e) {
+    e.preventDefault();
+    productsSubMenu.classList.remove('hide');
+    productsSubMenu.classList.add('show');
+    // اگر می‌خوای سایدبار اصلی پنهان شه:
+    document.querySelector('.side-menu').classList.add('hide');
+});
+
+productsBack.addEventListener('click', function (e) {
+    e.preventDefault();
+    productsSubMenu.classList.remove('show');
+    productsSubMenu.classList.add('hide');
+    document.querySelector('.side-menu').classList.remove('hide');
 });
