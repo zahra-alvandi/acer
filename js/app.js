@@ -205,6 +205,7 @@ buttons.forEach((btn, index) => {
 
 const productsTrigger = document.querySelector('.side-menu-box:nth-child(4) .side-menu-item');
 const productsSubMenu = document.querySelector('.products-side-menu');
+const acerBrandsSubMenu = document.querySelector('.acer-brands-menu');
 
 
 const productsBack = document.querySelector('.products-side-menu-title .side-menu-item');
