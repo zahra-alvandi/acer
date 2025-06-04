@@ -77,13 +77,47 @@
   text-decoration: none;
 }
 
-.side-menu,
+/* .side-menu,
 .products-side-menu {
-  transition: all 0.3s ease;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+} */
+
+/* .products-side-menu {
+  transform: translateX(0); 
+} */
+
+.products-side-menu {
+  position: fixed;
+  top: 39px;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* مخفی‌شده به سمت راست */
+  z-index: 1000;
 }
+
+.products-side-menu.show {
+  transform: translateX(0); /* ظاهر شدن منو */
+}
+
+.products-side-menu.hide {
+  transform: translateX(100%); 
+}
+
 
 .products-side-menu {
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.products-side-menu-title {
+  padding: 12px 24px;
+  background-color: rgb(71 71 71 / 11%);
 }
 
 .products-side-menu-items li {
