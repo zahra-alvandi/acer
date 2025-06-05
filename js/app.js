@@ -259,3 +259,28 @@ productsBack3.addEventListener('click', function (e) {
     document.querySelector('.side-menu').classList.remove('hide');
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const productsMenu = document.querySelector('.products-side-menu');
+    const openMenuBtn = document.querySelector('.side-menu-item'); // دکمه بازکردن منو
+    const closeBtns = document.querySelectorAll('.products-side-menu-title svg'); // دکمه‌های بستن
+
+    openMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        productsMenu.classList.add('show');
+        productsMenu.classList.remove('hide');
+
+        // غیر فعال کردن اسکرول صفحه اصلی
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            productsMenu.classList.remove('show');
+            productsMenu.classList.add('hide');
+
+            // فعال کردن مجدد اسکرول صفحه اصلی
+            document.body.style.overflow = '';
+        });
+    });
+});

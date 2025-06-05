@@ -96,35 +96,36 @@
   background: #f8f9fa;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  transform: translateX(-100%); /* مخفی‌شده به سمت راست */
+  transform: translateX(-100%);
   z-index: 1000;
 }
 
 .products-side-menu.show {
-  transform: translateX(0); /* ظاهر شدن منو */
+  transform: translateX(0);
 }
 
 .products-side-menu.hide {
   transform: translateX(100%);
 }
 
-.laptops-side-menu {
+
+.first-laptops-side-menu {
   position: absolute;
   top: 0;
   right: 0;
-  width: 300px;
-  height: 100%;
-  background-color: #f1f1f1;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-100%);
-  opacity: 0;
-  pointer-events: none;
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  transition: transform 0.3s ease;
+  z-index: 100;
 }
 
-.laptops-side-menu.active {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
+.hide {
+  transform: translateX(100%);
+}
+
+.show {
+  transform: translateX(0%);
 }
 
 .products-side-menu {
