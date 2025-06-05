@@ -94,7 +94,7 @@
   width: 300px;
   height: 100%;
   background: #f8f9fa;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   transform: translateX(-100%); /* مخفی‌شده به سمت راست */
   z-index: 1000;
@@ -105,9 +105,27 @@
 }
 
 .products-side-menu.hide {
-  transform: translateX(100%); 
+  transform: translateX(100%);
 }
 
+.laptops-side-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f1f1f1;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.laptops-side-menu.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .products-side-menu {
   width: 100%;
@@ -123,11 +141,28 @@
 .products-side-menu-items li {
   padding: 12px 24px;
   font-size: 18px;
+  position: relative;
 }
 
 .products-side-menu-items a {
   text-decoration: none;
   color: rgb(34, 34, 34);
+}
+
+.products-side-menu-items svg {
+  position: absolute;
+  right: 15px;
+}
+
+.acer-brands-menu ul {
+  padding: 0px 24px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2;
+}
+
+.acer-brands-menu li {
+  padding: 0;
 }
 
 .main-first-slider {

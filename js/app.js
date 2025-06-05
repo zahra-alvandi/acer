@@ -204,11 +204,18 @@ buttons.forEach((btn, index) => {
 
 
 const productsTrigger = document.querySelector('.side-menu-box:nth-child(4) .side-menu-item');
+const productsTrigger2 = document.querySelector('.side-menu-box:nth-child(8) .side-menu-item');
+const productsTrigger3 = document.querySelector('.side-menu-box:nth-child(9) .side-menu-item');
 const productsSubMenu = document.querySelector('.products-side-menu');
 const acerBrandsSubMenu = document.querySelector('.acer-brands-menu');
+const acerIdSubMenu = document.querySelector('.acerId-side-menu');
+
 
 
 const productsBack = document.querySelector('.products-side-menu-title .side-menu-item');
+const productsBack2 = document.querySelector('.acer-brands-menu .side-menu-item');
+const productsBack3 = document.querySelector('.acerId-side-menu .side-menu-item');
+
 
 productsTrigger.addEventListener('click', function (e) {
     e.preventDefault();
@@ -224,4 +231,31 @@ productsBack.addEventListener('click', function (e) {
     document.querySelector('.side-menu').classList.remove('hide');
 });
 
+productsTrigger2.addEventListener('click', function (e) {
+    e.preventDefault();
+    acerBrandsSubMenu.classList.remove('hide');
+    acerBrandsSubMenu.classList.add('show');
+    document.querySelector('.side-menu').classList.add('hide');
+});
+
+productsBack2.addEventListener('click', function (e) {
+    e.preventDefault();
+    acerBrandsSubMenu.classList.remove('show');
+    acerBrandsSubMenu.classList.add('hide');
+    document.querySelector('.side-menu').classList.remove('hide');
+});
+
+productsTrigger3.addEventListener('click', function (e) {
+    e.preventDefault();
+    acerIdSubMenu.classList.remove('hide');
+    acerIdSubMenu.classList.add('show');
+    document.querySelector('.side-menu').classList.add('hide');
+});
+
+productsBack3.addEventListener('click', function (e) {
+    e.preventDefault();
+    acerIdSubMenu.classList.remove('show');
+    acerIdSubMenu.classList.add('hide');
+    document.querySelector('.side-menu').classList.remove('hide');
+});
 
