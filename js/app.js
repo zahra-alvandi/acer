@@ -3,18 +3,7 @@ const headerMobileLine1 = document.querySelector(".header-mobile-line-1");
 const headerMobileLine2 = document.querySelector(".header-mobile-line-2");
 const headerMobileLine3 = document.querySelector(".header-mobile-line-3");
 const sideMenu = document.querySelector(".side-menu");
-const firstSliderImg = document.querySelector(".first-slider-img");
-const firstSliderImgMd = document.querySelector(".first-slider-img-md");
-const imgBtn1 = document.querySelector(".img-button-1");
-const imgBtn2 = document.querySelector(".img-button-2");
-const imgBtn3 = document.querySelector(".img-button-3");
-const imgBtn4 = document.querySelector(".img-button-4");
-const imgBtn5 = document.querySelector(".img-button-5");
-const pic1TextBox = document.querySelector(".pic-1-text-box");
-const pic2TextBox = document.querySelector(".pic-2-text-box");
-const pic3TextBox = document.querySelector(".pic-3-text-box");
-const pic4TextBox = document.querySelector(".pic-4-text-box");
-const pic5TextBox = document.querySelector(".pic-5-text-box");
+
 const width = window.innerWidth;
 const slider1Pic1 = document.querySelector(".slider-1-pic1");
 const fullText = "Purchasing a laptop to see us through school or college is an important investment.Student laptops witness the highs and lows of student life, helping us to cram information before a big exam, type assignments, or play movies or games during downtime.They must balance value, performance, and dependable battery life to get through a day of classes or intense study sessions.Student laptops must also be durable and withstand being transported around in a bag or rucksack(see our pick of stylish laptop bags here).Here are some of the best budget laptops for college or school."
@@ -52,94 +41,80 @@ headerMobileMenu.addEventListener("click", function () {
     });
 });
 
-imgBtn1.addEventListener("click", function () {
-    firstSliderImg.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-S.avif");
-    pic1TextBox.classList.remove("hide");
-    pic2TextBox.classList.add("hide");
-    pic3TextBox.classList.add("hide");
-    pic4TextBox.classList.add("hide");
-    pic5TextBox.classList.add("hide");
-});
+
+window.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    const captions = document.querySelectorAll(".caption");
+    const toggleBtn = document.getElementById("toggleSlider");
+    let index = 1;
+    let currentSize = "";
+    let interval;
+    isPaused = false;
+
+    function getSizeCategory() {
+        const width = window.innerWidth;
+        if (width < 768) return "mobile";
+        if (width < 1200) return "laptop";
+        return "desktop";
+    }
+
+    function updateSlider() {
+        currentSize = getSizeCategory();
+
+        slides.forEach((img, i) => {
+            const src = `image/${currentSize}${index}.avif`;
+            img.setAttribute("src", src);
+        });
+
+        captions.forEach(caption => {
+            caption.style.display = "none";
+        });
+
+        const activeCaption = document.querySelector(`.caption.pic-${index}-text-box`);
+        if (activeCaption) {
+            activeCaption.style.display = "block";
+        }
+    }
 
 
-if (width >= 425) {
-    imgBtn2.addEventListener("click", function () {
-        firstSliderImg.setAttribute("src", "./image/swift-edge-14-ai-agw-banner_Primary-Hero-M2.avif");
-        pic2TextBox.classList.remove("hide");
-        pic1TextBox.classList.add("hide");
-        pic3TextBox.classList.add("hide");
-        pic4TextBox.classList.add("hide");
-        pic5TextBox.classList.add("hide");
+    toggleBtn.addEventListener("click", () => {
+        const playIcon = toggleBtn.querySelector(".play-icon");
+        const pauseIcon = toggleBtn.querySelector(".pause-icon");
+
+        if (isPaused) {
+            startSlider();
+            playIcon.style.display = "none";
+            pauseIcon.style.display = "inline";
+        } else {
+            stopSlider();
+            playIcon.style.display = "inline";
+            pauseIcon.style.display = "none";
+        }
+
+        isPaused = !isPaused;
     });
 
-} else {
-    imgBtn2.addEventListener("click", function () {
-        firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
-        pic2TextBox.classList.remove("hide");
-        pic1TextBox.classList.add("hide");
-        pic3TextBox.classList.add("hide");
-        pic4TextBox.classList.add("hide");
-        pic5TextBox.classList.add("hide");
+
+    function startSlider() {
+        updateSlider();
+        setInterval(() => {
+            index = (index % 5) + 1;
+            updateSlider();
+        }, 7000);
+    }
+    function stopSlider() {
+        clearInterval(interval);
+    }
+
+    startSlider();
+
+
+    window.addEventListener("resize", () => {
+        updateSlider();
     });
-}
-
-
-imgBtn3.addEventListener("click", function () {
-    firstSliderImg.setAttribute("src", "./image/HOMEPAGE_2900x1087-4_Primary-Hero-S.avif");
-    pic3TextBox.classList.remove("hide");
-    pic1TextBox.classList.add("hide");
-    pic2TextBox.classList.add("hide");
-    pic4TextBox.classList.add("hide");
-    pic5TextBox.classList.add("hide");
 });
 
-imgBtn4.addEventListener("click", function () {
-    firstSliderImg.setAttribute("src", "./image/acer-laptop-swift-14-ai-amd-hero-banner-sf14-61_Primary-Hero-S.avif");
-    pic4TextBox.classList.remove("hide");
-    pic3TextBox.classList.add("hide");
-    pic1TextBox.classList.add("hide");
-    pic2TextBox.classList.add("hide");
-    pic5TextBox.classList.add("hide");
-});
 
-imgBtn5.addEventListener("click", function () {
-    firstSliderImg.setAttribute("src", "./image/Acer-TravelMate-P6-14-AI-tmp614-54-Banner_Primary-Hero-S.avif");
-    pic5TextBox.classList.remove("hide");
-    pic4TextBox.classList.add("hide");
-    pic3TextBox.classList.add("hide");
-    pic1TextBox.classList.add("hide");
-    pic2TextBox.classList.add("hide");
-});
-
-const img = document.querySelector(".slide");
-let index = 1;
-let currentSize = '';
-
-function getSizeCategory() {
-    const width = window.innerWidth;
-    if (width < 768) return 'mobile';
-    if (width < 1200) return 'laptop';
-    return 'desktop';
-}
-
-function updateImage() {
-    currentSize = getSizeCategory();
-    const imageName = `image/${currentSize}${index}.avif`; // مسیر صحیح به پوشه تصاویر
-    img.setAttribute('src', imageName);
-}
-
-
-function startSlider() {
-    updateImage(); // بار اول عکس رو ست کن
-    setInterval(() => {
-        index = (index % 5) + 1; // چرخش بین 1 تا 5
-        updateImage();
-    }, 7000);
-}
-
-startSlider();
-
-// در صورت تغییر سایز، دسته‌بندی رو آپدیت کن و اندیس رو ریست کن
 window.addEventListener('resize', () => {
     const newSize = getSizeCategory();
     if (newSize !== currentSize) {
@@ -189,22 +164,19 @@ buttons.forEach((btn, index) => {
         const arrowIcon = btn.querySelector('.arrow-icon');
         const isOpen = clickedDropdown.classList.contains('show');
 
-        // بستن همه dropdownها و حذف چرخش همه فلش‌ها
         dropdowns.forEach(drop => drop.classList.remove('show'));
         document.querySelectorAll('.arrow-icon').forEach(icon => icon.classList.remove('rotate'));
 
-        // اگه باز نبود، بازش کن و فلش بچرخون
         if (!isOpen) {
             clickedDropdown.classList.add('show');
             arrowIcon.classList.add('rotate');
 
-            // اسکرول کردن تا پایین dropdown باز شده
             setTimeout(() => {
                 clickedDropdown.scrollIntoView({
                     behavior: 'smooth',
                     block: 'end'
                 });
-            }, 300); // صبر کن تا transition باز شدن تموم شه
+            }, 300);
         }
     });
 });
@@ -269,15 +241,14 @@ productsBack3.addEventListener('click', function (e) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const productsMenu = document.querySelector('.products-side-menu');
-    const openMenuBtn = document.querySelector('.side-menu-item'); // دکمه بازکردن منو
-    const closeBtns = document.querySelectorAll('.products-side-menu-title svg'); // دکمه‌های بستن
+    const openMenuBtn = document.querySelector('.side-menu-item');
+    const closeBtns = document.querySelectorAll('.products-side-menu-title svg');
 
     openMenuBtn.addEventListener('click', (e) => {
         e.preventDefault();
         productsMenu.classList.add('show');
         productsMenu.classList.remove('hide');
 
-        // غیر فعال کردن اسکرول صفحه اصلی
         document.body.style.overflow = 'hidden';
     });
 
@@ -287,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
             productsMenu.classList.remove('show');
             productsMenu.classList.add('hide');
 
-            // فعال کردن مجدد اسکرول صفحه اصلی
             document.body.style.overflow = '';
         });
     });
