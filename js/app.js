@@ -52,15 +52,6 @@ headerMobileMenu.addEventListener("click", function () {
     });
 });
 
-// if (width <= 374) {
-//     slider1Pic1.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-S.avif")
-// }
-// if (width >= 375) {
-//     slider1Pic1.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-M2.avif")
-// } else if (width >= 678) {
-//     slider1Pic1.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-M1.avif")
-// }
-
 imgBtn1.addEventListener("click", function () {
     firstSliderImg.setAttribute("src", "./image/Computex2025-AGW-Home-Banner-Acer-1_Primary-Hero-S.avif");
     pic1TextBox.classList.remove("hide");
@@ -73,16 +64,6 @@ imgBtn1.addEventListener("click", function () {
 
 if (width >= 425) {
     imgBtn2.addEventListener("click", function () {
-        // if (425 <= width <= 767) {
-        //     slider1Pic1Md.classList.remove("hide");
-        // } else {
-        //     slider1Pic1Md.classList.add("hide");
-        // }
-        // if (320 <= width <= 425) {
-        //     firstSliderImg.setAttribute("src", "./image/swift-edge-14-ai-agw-banner_Primary-Hero-M2.avif");
-        // } else if (426 <= width <= 767) {
-        //     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
-        // }
         firstSliderImg.setAttribute("src", "./image/swift-edge-14-ai-agw-banner_Primary-Hero-M2.avif");
         pic2TextBox.classList.remove("hide");
         pic1TextBox.classList.add("hide");
@@ -93,16 +74,6 @@ if (width >= 425) {
 
 } else {
     imgBtn2.addEventListener("click", function () {
-        // if (425 <= width <= 767) {
-        //     slider1Pic1Md.classList.remove("hide");
-        // } else {
-        //     slider1Pic1Md.classList.add("hide");
-        // }
-        // if (320 <= width <= 425) {
-        //     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
-        // } else if (426 <= width <= 767) {
-        //     firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
-        // }
         firstSliderImg.setAttribute("src", "./image/swift-go-16-agw-banner_1_Primary-Hero-S.avif");
         pic2TextBox.classList.remove("hide");
         pic1TextBox.classList.add("hide");
@@ -138,6 +109,43 @@ imgBtn5.addEventListener("click", function () {
     pic3TextBox.classList.add("hide");
     pic1TextBox.classList.add("hide");
     pic2TextBox.classList.add("hide");
+});
+
+const img = document.querySelector(".slide");
+let index = 1;
+let currentSize = '';
+
+function getSizeCategory() {
+    const width = window.innerWidth;
+    if (width < 768) return 'mobile';
+    if (width < 1200) return 'laptop';
+    return 'desktop';
+}
+
+function updateImage() {
+    currentSize = getSizeCategory();
+    const imageName = `image/${currentSize}${index}.avif`; // مسیر صحیح به پوشه تصاویر
+    img.setAttribute('src', imageName);
+}
+
+
+function startSlider() {
+    updateImage(); // بار اول عکس رو ست کن
+    setInterval(() => {
+        index = (index % 5) + 1; // چرخش بین 1 تا 5
+        updateImage();
+    }, 7000);
+}
+
+startSlider();
+
+// در صورت تغییر سایز، دسته‌بندی رو آپدیت کن و اندیس رو ریست کن
+window.addEventListener('resize', () => {
+    const newSize = getSizeCategory();
+    if (newSize !== currentSize) {
+        index = 1;
+        updateImage();
+    }
 });
 
 function updateResponsiveText() {
@@ -284,3 +292,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
