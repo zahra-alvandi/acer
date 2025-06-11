@@ -397,72 +397,70 @@
 }
 
 .poster-section {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   display: flex;
   flex-direction: column;
 }
 
-.poster-1-box {
-  position: relative;
-  width: 320px;
-  height: 309px;
-  margin-bottom: 24px;
+.poster-section-title {
+  text-align: center;
+  margin: 48px 0px;
+  color: #222222;
+  font-size: 47px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
 
-.glass-overlay {
+.poster-img-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+.poster-section-img-box {
+  overflow: hidden;
+  position: relative;
+}
+
+.poster-section-img-box img {
+  width: 699px;
+  object-fit: cover;
+}
+
+.glass-cover {
   position: absolute;
   top: 0;
-  background: rgba(255, 255, 255, 0.2); /* سفید نیمه‌شفاف */
-  backdrop-filter: blur(8px); /* افکت شیشه‌ای */
-  /* -webkit-backdrop-filter: blur(8px);  */
-}
-
-.poster-1-text-box {
-  padding: 16px 24px;
-  position: absolute;
-  top: 42px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, -0.5);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 24px;
+  justify-content: center;
+  color: #222222;
+  font-size: 1.5rem;
+  border-radius: 10px;
 }
 
-.poster-1-text-box h4 {
-  font-size: 25px;
-  font-weight: 400;
+.poster-section-text-box {
+  /* padding: 32px 48px; */
+  position: absolute;
+  top: 0px;
+}
+
+.poster-section-text-box1 {
+  display: flex;
+  justify-content: center;
+}
+
+.poster-section-text-box p {
   margin: 0px 0px 16px;
-}
-
-.poster-1-text-box p {
-  color: rgb(71, 71, 71);
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 30px;
-}
-
-.poster-1-text-box button {
-  padding: 14px 0px 4px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #474747;
-  background-color: transparent;
-  border: none;
-  border-bottom: 3px solid #80c343;
-}
-
-.poster-2-box {
-  position: relative;
-  width: 320px;
-  height: 309px;
-  margin-bottom: 24px;
-}
-
-.insights-section {
-  padding: 48px 24px;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* .insights-section-container {
