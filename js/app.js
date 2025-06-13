@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function getSizeCategory() {
         const width = window.innerWidth;
-        if (width < 768) return "mobile";
+        if (width < 637) return "mobile";
         if (width < 1200) return "laptop";
         return "desktop";
     }
