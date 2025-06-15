@@ -253,6 +253,23 @@
   border: 0;
 }
 
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: var(--progress, 0%);
+  background-color: rgb(128, 195, 67);
+  transition: none;
+  z-index: 1;
+}
+
 .slider-box img {
   display: none;
 }

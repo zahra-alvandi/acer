@@ -42,14 +42,104 @@ headerMobileMenu.addEventListener("click", function () {
 });
 
 
+// window.addEventListener("DOMContentLoaded", () => {
+//     const slides = document.querySelectorAll(".slide");
+//     const captions = document.querySelectorAll(".caption");
+//     const toggleBtn = document.getElementById("toggleSlider");
+//     let index = 1;
+//     let currentSize = "";
+//     let interval;
+//     let isPaused = false;
+
+//     function getSizeCategory() {
+//         const width = window.innerWidth;
+//         if (width < 637) return "mobile";
+//         if (width < 1200) return "laptop";
+//         return "desktop";
+//     }
+
+//     function updateSlider() {
+//         currentSize = getSizeCategory();
+
+//         slides.forEach((img, i) => {
+//             const src = `image/${currentSize}${index}.avif`;
+//             img.setAttribute("src", src);
+//         });
+
+//         captions.forEach(caption => {
+//             caption.style.display = "none";
+//         });
+
+//         const activeCaption = document.querySelector(`.caption.pic-${index}-text-box`);
+//         if (activeCaption) {
+//             activeCaption.style.display = "block";
+//         }
+//     }
+
+
+//     toggleBtn.addEventListener("click", () => {
+//         const playIcon = toggleBtn.querySelector(".play-icon");
+//         const pauseIcon = toggleBtn.querySelector(".pause-icon");
+
+//         if (isPaused) {
+//             startSlider();
+//             playIcon.style.display = "none";
+//             pauseIcon.style.display = "inline";
+//         } else {
+//             stopSlider();
+//             playIcon.style.display = "inline";
+//             pauseIcon.style.display = "none";
+//         }
+
+//         isPaused = !isPaused;
+//     });
+
+
+//     function startSlider() {
+//         updateSlider();
+//         interval = setInterval(() => {
+//             index = (index % 5) + 1;
+//             updateSlider();
+//         }, 7000);
+//     }
+
+//     function stopSlider() {
+//         clearInterval(interval);
+//     }
+
+//     startSlider();
+
+
+//     window.addEventListener("resize", () => {
+//         updateSlider();
+//     });
+// });
+
+
+// window.addEventListener('resize', () => {
+//     const newSize = getSizeCategory();
+//     if (newSize !== currentSize) {
+//         index = 1;
+//         updateImage();
+//     }
+// });
+
+
+// تابع سراسری برای تشخیص سایز صفحه
+
+
 window.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".slide");
     const captions = document.querySelectorAll(".caption");
     const toggleBtn = document.getElementById("toggleSlider");
+    const slideButtons = document.querySelectorAll(".img-button .btn");
     let index = 1;
     let currentSize = "";
     let interval;
-    isPaused = false;
+    let isPaused = false;
+    let progressInterval;
+    const progressTime = 7000;
+    let currentProgressIndex = 1;
 
     function getSizeCategory() {
         const width = window.innerWidth;
@@ -61,12 +151,12 @@ window.addEventListener("DOMContentLoaded", () => {
     function updateSlider() {
         currentSize = getSizeCategory();
 
-        slides.forEach((img, i) => {
+        slides.forEach((img) => {
             const src = `image/${currentSize}${index}.avif`;
             img.setAttribute("src", src);
         });
 
-        captions.forEach(caption => {
+        captions.forEach((caption) => {
             caption.style.display = "none";
         });
 
@@ -74,8 +164,52 @@ window.addEventListener("DOMContentLoaded", () => {
         if (activeCaption) {
             activeCaption.style.display = "block";
         }
+
+        // وقتی اسلاید تغییر کرد، progress جدید شروع بشه
+        startProgress(index);
     }
 
+    function startProgress(idx) {
+        slideButtons.forEach(btn => {
+            btn.style.setProperty('--progress', '0%');
+        });
+
+        const btn = slideButtons[idx - 1];
+        let start = null;
+
+        function animate(timestamp) {
+            if (!start) start = timestamp;
+            const elapsed = timestamp - start;
+            const percentage = Math.min((elapsed / progressTime) * 100, 100);
+            btn.style.setProperty('--progress', percentage + "%");
+
+            if (elapsed < progressTime) {
+                progressInterval = requestAnimationFrame(animate);
+            } else {
+                index = (index % 5) + 1;
+                currentProgressIndex = index;
+                updateSlider();
+            }
+        }
+
+        cancelAnimationFrame(progressInterval);
+        progressInterval = requestAnimationFrame(animate);
+    }
+
+    function startSlider() {
+        updateSlider();
+        interval = setInterval(() => {
+            if (!isPaused) {
+                index = (index % 5) + 1;
+                updateSlider();
+            }
+        }, progressTime);
+    }
+
+    function stopSlider() {
+        clearInterval(interval);
+        cancelAnimationFrame(progressInterval);
+    }
 
     toggleBtn.addEventListener("click", () => {
         const playIcon = toggleBtn.querySelector(".play-icon");
@@ -94,34 +228,30 @@ window.addEventListener("DOMContentLoaded", () => {
         isPaused = !isPaused;
     });
 
-
-    function startSlider() {
-        updateSlider();
-        setInterval(() => {
-            index = (index % 5) + 1;
+    // کلیک روی دکمه‌ها
+    slideButtons.forEach((button, i) => {
+        button.addEventListener("click", () => {
+            index = i + 1;
             updateSlider();
-        }, 7000);
-    }
-    function stopSlider() {
-        clearInterval(interval);
-    }
-
-    startSlider();
-
+            if (!isPaused) {
+                cancelAnimationFrame(progressInterval);
+                startProgress(index);
+            }
+        });
+    });
 
     window.addEventListener("resize", () => {
-        updateSlider();
+        const newSize = getSizeCategory();
+        if (newSize !== currentSize) {
+            index = 1;
+            updateSlider();
+        }
     });
+
+    startSlider();
 });
 
 
-window.addEventListener('resize', () => {
-    const newSize = getSizeCategory();
-    if (newSize !== currentSize) {
-        index = 1;
-        updateImage();
-    }
-});
 
 function updateResponsiveText() {
     const width = window.innerWidth;
