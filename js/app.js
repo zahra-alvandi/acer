@@ -165,7 +165,6 @@ window.addEventListener("DOMContentLoaded", () => {
             activeCaption.style.display = "block";
         }
 
-        // وقتی اسلاید تغییر کرد، progress جدید شروع بشه
         startProgress(index);
     }
 
@@ -228,7 +227,6 @@ window.addEventListener("DOMContentLoaded", () => {
         isPaused = !isPaused;
     });
 
-    // کلیک روی دکمه‌ها
     slideButtons.forEach((button, i) => {
         button.addEventListener("click", () => {
             index = i + 1;
