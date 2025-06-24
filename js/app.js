@@ -392,3 +392,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+const productClick = document.querySelector('.product-click');
+const productSubMenu = document.querySelector('.products-sub-menu');
+
+productClick.addEventListener('click', function (e) {
+    e.preventDefault();
+    productSubMenu.classList.toggle('show');
+    
+});
