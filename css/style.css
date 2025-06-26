@@ -246,16 +246,13 @@
   background-color: rgb(225, 225, 225);
   box-shadow: rgba(71, 71, 71, 0.2);
   border: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .pause-play-btn {
   background-color: transparent;
   border: 0;
-}
-
-.btn {
-  position: relative;
-  overflow: hidden;
 }
 
 .btn::before {
@@ -268,6 +265,10 @@
   background-color: rgb(128, 195, 67);
   transition: none;
   z-index: 1;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
 
 .slider-box img {
@@ -1707,7 +1708,7 @@
 
   .category-sub-menu li:hover {
     background-color: white;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .new-products a {
@@ -1757,6 +1758,32 @@
   }
   .new-products-active-link {
     background-color: #f0f0f0;
+  }
+
+  .insights-section {
+    position: relative;
+  }
+
+  .arrow-icon-insights-section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    /* background: rgba(255, 255, 255, 0.7); */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #scroll-left {
+    left: 10px;
+  }
+
+  #scroll-right {
+    right: 10px;
+  }
+
+  .scroll-hover:hover {
+    background-color: rgb(128, 195, 67);
   }
 }
 

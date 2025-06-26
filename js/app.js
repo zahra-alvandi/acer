@@ -397,6 +397,31 @@ const productSubMenu = document.querySelector('.products-sub-menu');
 
 productClick.addEventListener('click', function (e) {
     e.preventDefault();
+    e.stopPropagation();
     productSubMenu.classList.toggle('show');
-    
+
+});
+document.addEventListener('click', function (e) {
+    if (!productSubMenu.contains(e.target) && !productClick.contains(e.target)) {
+        productSubMenu.classList.remove('show');
+    }
+});
+
+
+const scrollContainer = document.getElementById('insights-scroll');
+const scrollLeftBtn = document.getElementById('scroll-left');
+const scrollRightBtn = document.getElementById('scroll-right');
+
+scrollLeftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+    });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+    });
 });
