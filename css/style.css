@@ -903,6 +903,10 @@
   display: none;
 }
 
+.arrow-icon-insights-section {
+  display: none;
+}
+
 @media screen and (min-width: 1600px) {
   .img-button {
     /* width: 280px; */
@@ -1772,6 +1776,7 @@
     /* background: rgba(255, 255, 255, 0.7); */
     border-radius: 50%;
     cursor: pointer;
+    display: block;
   }
 
   #scroll-left {
