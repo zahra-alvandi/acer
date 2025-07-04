@@ -311,101 +311,146 @@ buttons.forEach((btn, index) => {
 
 
 
-const productsTrigger = document.querySelector('.side-menu-box:nth-child(4) .side-menu-item');
-const productsTrigger2 = document.querySelector('.side-menu-box:nth-child(8) .side-menu-item');
-const productsTrigger3 = document.querySelector('.side-menu-box:nth-child(9) .side-menu-item');
-const productsSubMenu = document.querySelector('.products-side-menu');
-const acerBrandsSubMenu = document.querySelector('.acer-brands-menu');
-const acerIdSubMenu = document.querySelector('.acerId-side-menu');
+// const productsTrigger = document.querySelector('.side-menu-box:nth-child(4) .side-menu-item');
+// const productsTrigger2 = document.querySelector('.side-menu-box:nth-child(8) .side-menu-item');
+// const productsTrigger3 = document.querySelector('.side-menu-box:nth-child(9) .side-menu-item');
+// const productsSubMenu = document.querySelector('.products-side-menu');
+// const acerBrandsSubMenu = document.querySelector('.acer-brands-menu');
+// const acerIdSubMenu = document.querySelector('.acerId-side-menu');
 
 
 
-const productsBack = document.querySelector('.products-side-menu-title .side-menu-item');
-const productsBack2 = document.querySelector('.acer-brands-menu .side-menu-item');
-const productsBack3 = document.querySelector('.acerId-side-menu .side-menu-item');
+// const productsBack = document.querySelector('.products-side-menu-title .side-menu-item');
+// const productsBack2 = document.querySelector('.acer-brands-menu .side-menu-item');
+// const productsBack3 = document.querySelector('.acerId-side-menu .side-menu-item');
 
 
-productsTrigger.addEventListener('click', function (e) {
-    e.preventDefault();
-    productsSubMenu.classList.remove('hide');
-    productsSubMenu.classList.add('show');
-    document.querySelector('.side-menu').classList.add('hide');
-});
+// productsTrigger.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     productsSubMenu.classList.remove('hide');
+//     productsSubMenu.classList.add('show');
+//     document.querySelector('.side-menu').classList.add('hide');
+// });
 
-productsBack.addEventListener('click', function (e) {
-    e.preventDefault();
-    productsSubMenu.classList.remove('show');
-    productsSubMenu.classList.add('hide');
-    document.querySelector('.side-menu').classList.remove('hide');
-});
+// productsBack.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     productsSubMenu.classList.remove('show');
+//     productsSubMenu.classList.add('hide');
+//     document.querySelector('.side-menu').classList.remove('hide');
+// });
 
-productsTrigger2.addEventListener('click', function (e) {
-    e.preventDefault();
-    acerBrandsSubMenu.classList.remove('hide');
-    acerBrandsSubMenu.classList.add('show');
-    document.querySelector('.side-menu').classList.add('hide');
-});
+// productsTrigger2.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     acerBrandsSubMenu.classList.remove('hide');
+//     acerBrandsSubMenu.classList.add('show');
+//     document.querySelector('.side-menu').classList.add('hide');
+// });
 
-productsBack2.addEventListener('click', function (e) {
-    e.preventDefault();
-    acerBrandsSubMenu.classList.remove('show');
-    acerBrandsSubMenu.classList.add('hide');
-    document.querySelector('.side-menu').classList.remove('hide');
-});
+// productsBack2.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     acerBrandsSubMenu.classList.remove('show');
+//     acerBrandsSubMenu.classList.add('hide');
+//     document.querySelector('.side-menu').classList.remove('hide');
+// });
 
-productsTrigger3.addEventListener('click', function (e) {
-    e.preventDefault();
-    acerIdSubMenu.classList.remove('hide');
-    acerIdSubMenu.classList.add('show');
-    document.querySelector('.side-menu').classList.add('hide');
-});
+// productsTrigger3.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     acerIdSubMenu.classList.remove('hide');
+//     acerIdSubMenu.classList.add('show');
+//     document.querySelector('.side-menu').classList.add('hide');
+// });
 
-productsBack3.addEventListener('click', function (e) {
-    e.preventDefault();
-    acerIdSubMenu.classList.remove('show');
-    acerIdSubMenu.classList.add('hide');
-    document.querySelector('.side-menu').classList.remove('hide');
-});
+// productsBack3.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     acerIdSubMenu.classList.remove('show');
+//     acerIdSubMenu.classList.add('hide');
+//     document.querySelector('.side-menu').classList.remove('hide');
+// });
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+//     const productsMenu = document.querySelector('.products-side-menu');
+//     const openMenuBtn = document.querySelector('.side-menu-item');
+//     const closeBtns = document.querySelectorAll('.products-side-menu-title svg');
+
+//     openMenuBtn.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         productsMenu.classList.add('show');
+//         productsMenu.classList.remove('hide');
+
+//         document.body.style.overflow = 'hidden';
+//     });
+
+//     closeBtns.forEach(btn => {
+//         btn.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             productsMenu.classList.remove('show');
+//             productsMenu.classList.add('hide');
+
+//             document.body.style.overflow = '';
+//         });
+//     });
+// });
+
+
+// const productClick = document.querySelector('.product-click');
+// const productSubMenu = document.querySelector('.products-sub-menu');
+
+// productClick.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     productSubMenu.classList.toggle('show');
+
+// });
+// document.addEventListener('click', function (e) {
+//     if (!productSubMenu.contains(e.target) && !productClick.contains(e.target)) {
+//         productSubMenu.classList.remove('show');
+//     }
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // منوهای اصلی
+    const mainMenu = document.querySelector('.side-menu');
     const productsMenu = document.querySelector('.products-side-menu');
-    const openMenuBtn = document.querySelector('.side-menu-item');
-    const closeBtns = document.querySelectorAll('.products-side-menu-title svg');
+    const laptopsMenu = document.querySelector('.laptops-side-menu');
 
-    openMenuBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        productsMenu.classList.add('show');
-        productsMenu.classList.remove('hide');
+    // لینک Products در منوی اصلی (فرض می‌کنیم 4امین .side-menu-box)
+    const productsLink = document.querySelector('.side-menu-box:nth-child(4) .side-menu-item');
 
-        document.body.style.overflow = 'hidden';
-    });
+    // فلش برگشت در منوی Products (آیکون svg در title)
+    const backFromProducts = document.querySelector('.products-side-menu-title svg');
 
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            productsMenu.classList.remove('show');
-            productsMenu.classList.add('hide');
+    // لینک Laptops در منوی Products
+    const laptopsLink = document.querySelector('.laptops-link');
 
-            document.body.style.overflow = '';
-        });
-    });
-});
-
-
-const productClick = document.querySelector('.product-click');
-const productSubMenu = document.querySelector('.products-sub-menu');
-
-productClick.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    productSubMenu.classList.toggle('show');
-
-});
-document.addEventListener('click', function (e) {
-    if (!productSubMenu.contains(e.target) && !productClick.contains(e.target)) {
-        productSubMenu.classList.remove('show');
+    // چک کردن وجود عناصر برای جلوگیری از خطا
+    if (!mainMenu || !productsMenu || !laptopsMenu || !productsLink || !backFromProducts || !laptopsLink) {
+        console.error('یکی از عناصر لازم در صفحه وجود ندارد.');
+        return;
     }
+
+    // کلیک روی Products
+    productsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        mainMenu.classList.add('hidden');
+        productsMenu.classList.remove('hidden');
+        laptopsMenu.classList.add('hidden'); // اگه قبلا باز مونده بود
+    });
+
+    // کلیک روی فلش برگشت در Products
+    backFromProducts.addEventListener('click', () => {
+        productsMenu.classList.add('hidden');
+        laptopsMenu.classList.add('hidden');
+        mainMenu.classList.remove('hidden');
+    });
+
+    // کلیک روی Laptops
+    laptopsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        laptopsMenu.classList.remove('hidden');
+    });
 });
+
+
 
 
 const scrollContainer = document.getElementById('insights-scroll');
